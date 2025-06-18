@@ -11,7 +11,7 @@ const ManagerTaskList = ({ onDelete }) => {
 
       try {
         const res = await fetch(
-          `http://localhost:8080/assign/manager-tasks?assignedBy=${userEmail}`
+          `https://tms-backend-g0yl.onrender.com/assign/manager-tasks?assignedBy=${userEmail}`
         );
         const data = await res.json();
         if (data.success) {
