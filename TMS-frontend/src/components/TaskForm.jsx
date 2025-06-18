@@ -56,7 +56,7 @@ const TaskForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/assign/task", {
+      const response = await fetch("https://tms-backend-g0yl.onrender.com/assign/task", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
