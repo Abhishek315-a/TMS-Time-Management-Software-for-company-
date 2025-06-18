@@ -13,7 +13,7 @@ const Leave = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch("http://localhost:8080/add/leave", {
+        const response = await fetch("https://tms-backend-g0yl.onrender.com/add/leave", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const Leave = () => {
     }
     try {
       const token = localStorage.getItem("token");
-      const url = "http://localhost:8080/add/leave";
+      const url = "https://tms-backend-g0yl.onrender.com/add/leave";
       const response = await fetch(url, {
         method: "POST",
         headers: {
