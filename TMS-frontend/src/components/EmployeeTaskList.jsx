@@ -10,7 +10,7 @@ const EmployeeTaskList = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:8080/assign/task?email=${userEmail}`
+        `https://tms-backend-g0yl.onrender.com/assign/task?email=${userEmail}`
       );
       const data = await res.json();
       if (data.success) {
@@ -28,7 +28,7 @@ const EmployeeTaskList = () => {
 
   const handleStatusChange = async (taskId, newStatus) => {
     try {
-      const res = await fetch("http://localhost:8080/assign/update", {
+      const res = await fetch("https://tms-backend-g0yl.onrender.com/assign/update", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ taskId, status: newStatus }),
@@ -63,7 +63,7 @@ const EmployeeTaskList = () => {
     );
     if (!confirmDelete) return;
     try {
-      const res = await fetch(`http://localhost:8080/assign/delete/${taskId}`, {
+      const res = await fetch(`https://tms-backend-g0yl.onrender.com/assign/delete/${taskId}`, {
         method: "DELETE",
       });
 
