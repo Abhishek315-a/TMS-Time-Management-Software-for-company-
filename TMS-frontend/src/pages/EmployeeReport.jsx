@@ -9,7 +9,7 @@ const EmployeeReport = () => {
     const fetchReport = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8080/report/employee-report?email=${email}`
+          `https://tms-backend-g0yl.onrender.com/report/employee-report?email=${email}`
         );
         const data = await res.json();
         if (data.success) {
