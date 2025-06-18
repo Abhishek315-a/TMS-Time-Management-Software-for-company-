@@ -25,7 +25,7 @@ const Signup = () => {
       return handleError("All fields are required");
     }
     try {
-      const url = "http://localhost:8080/auth/signup";
+      const url = "https://tms-backend-g0yl.onrender.com/auth/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {
