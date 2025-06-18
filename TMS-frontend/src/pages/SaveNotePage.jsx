@@ -26,7 +26,7 @@ const SaveNotePage = () => {
     const fetchNotes = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:8080/create/notes", {
+        const response = await fetch("https://tms-backend-g0yl.onrender.com/create/notes", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const SaveNotePage = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:8080/create/notes/${id}`, {
+      const res = await fetch(`https://tms-backend-g0yl.onrender.com/create/notes/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
