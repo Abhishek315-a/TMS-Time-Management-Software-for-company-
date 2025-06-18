@@ -21,7 +21,7 @@ const ProfilePage = () => {
     const fetchUserInfo = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:8080/profile", {
+        const res = await fetch("https://tms-backend-g0yl.onrender.com/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -86,7 +86,7 @@ const handleImageChange = (e) => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:8080/profile", {
+      const res = await fetch("https://tms-backend-g0yl.onrender.com/profile", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
