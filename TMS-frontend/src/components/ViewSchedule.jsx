@@ -12,7 +12,7 @@ const ViewSchedule = () => {
 
       try {
         const res = await fetch(
-          `http://localhost:8080/schedule/appointment?email=${userEmail}`
+          `https://tms-backend-g0yl.onrender.com/schedule/appointment?email=${userEmail}`
         );
         const data = await res.json();
         if (data.success) {
