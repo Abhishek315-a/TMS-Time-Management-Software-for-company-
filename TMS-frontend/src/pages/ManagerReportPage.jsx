@@ -9,7 +9,7 @@ const ManagerReportPage = () => {
     const fetchManagerReport = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8080/report/manager-report?email=${managerEmail}`
+          `https://tms-backend-g0yl.onrender.com/report/manager-report?email=${managerEmail}`
         );
         const data = await res.json();
         if (data.success) setReport(data.data);
