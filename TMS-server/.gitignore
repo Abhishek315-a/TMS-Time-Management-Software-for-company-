@@ -1,0 +1,4 @@
+# .gitignore inside tms-server
+.env
+node_modules/
+dist/
