@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 
 const ManagerReportPage = () => {
@@ -10,7 +10,7 @@ const ManagerReportPage = () => {
     const fetchManagerReport = async () => {
       try {
         const res = await fetch(
-          `${API_ENDPOINT}/report/manager-report?email=${managerEmail}`
+          `${REACT_APP_API_URL}/report/manager-report?email=${managerEmail}`
         );
         const data = await res.json();
         if (data.success) setReport(data.data);
