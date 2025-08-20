@@ -3,7 +3,7 @@ import { FiUser, FiLock, FiMail } from "react-icons/fi";
 import { Link, Navigate } from "react-router-dom";
 import { handleError, handleSuccess } from "./utils";
 import { useNavigate } from "react-router-dom";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 const Signup = () => {
   const navigate = useNavigate();
   const [signupInfo, setSignupInfo] = useState({
@@ -26,7 +26,7 @@ const Signup = () => {
       return handleError("All fields are required");
     }
     try {
-      const url = `${API_ENDPOINT}/auth/signup`;
+      const url = `${REACT_APP_API_URL}/auth/signup`;
       const response = await fetch(url, {
         method: "POST",
         headers: {
