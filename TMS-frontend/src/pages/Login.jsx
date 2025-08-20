@@ -25,7 +25,7 @@ const Login = () => {
       return handleError("All fields are required");
     }
     try {
-      const url = "https://tms-backend-g0yl.onrender.com/auth/login";
+      const url = "http://localhost:8080/auth/login";
       const response = await fetch(url, {
         method: "POST",
         headers: {
