@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { API_ENDPOINT } from "../utility/constant";
 
 const ProfilePage = () => {
   const [user, setUser] = useState({
@@ -21,7 +22,7 @@ const ProfilePage = () => {
     const fetchUserInfo = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("https://tms-backend-g0yl.onrender.com/profile", {
+        const res = await fetch(`${API_ENDPOINT}/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -86,7 +87,7 @@ const handleImageChange = (e) => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("https://tms-backend-g0yl.onrender.com/profile", {
+      const res = await fetch(`${API_ENDPOINT}/profile`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

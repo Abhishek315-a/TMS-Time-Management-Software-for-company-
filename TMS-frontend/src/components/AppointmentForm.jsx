@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AppointmentForm.css";
 import { handleError, handleSuccess } from "../pages/utils";
+import { API_ENDPOINT } from "../utility/constant";
 
 const AppointmentForm = () => {
   const [emailInput, setEmailInput] = useState("");
@@ -50,7 +51,7 @@ const AppointmentForm = () => {
       return handleError("All fields are required!");
     }
     try {
-      const url = "https://tms-backend-g0yl.onrender.com/schedule/appointment";
+      const url = `${API_ENDPOINT}/schedule/appointment`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

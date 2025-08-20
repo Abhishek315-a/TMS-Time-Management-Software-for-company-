@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API_ENDPOINT } from "../utility/constant";
 
 
 const ManagerReportPage = () => {
@@ -9,7 +10,7 @@ const ManagerReportPage = () => {
     const fetchManagerReport = async () => {
       try {
         const res = await fetch(
-          `https://tms-backend-g0yl.onrender.com/report/manager-report?email=${managerEmail}`
+          `${API_ENDPOINT}/report/manager-report?email=${managerEmail}`
         );
         const data = await res.json();
         if (data.success) setReport(data.data);

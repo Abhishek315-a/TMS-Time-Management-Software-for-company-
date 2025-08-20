@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API_ENDPOINT } from "../utility/constant";
 
 
 const ManagerTaskList = ({ onDelete }) => {
@@ -11,7 +12,7 @@ const ManagerTaskList = ({ onDelete }) => {
 
       try {
         const res = await fetch(
-          `https://tms-backend-g0yl.onrender.com/assign/manager-tasks?assignedBy=${userEmail}`
+          `${API_ENDPOINT}/assign/manager-tasks?assignedBy=${userEmail}`
         );
         const data = await res.json();
         if (data.success) {

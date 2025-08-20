@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API_ENDPOINT } from "../utility/constant";
 
 const EmployeeReport = () => {
   const [report, setReport] = useState(null);
@@ -9,7 +10,7 @@ const EmployeeReport = () => {
     const fetchReport = async () => {
       try {
         const res = await fetch(
-          `https://tms-backend-g0yl.onrender.com/report/employee-report?email=${email}`
+          `${API_ENDPOINT}/report/employee-report?email=${email}`
         );
         const data = await res.json();
         if (data.success) {

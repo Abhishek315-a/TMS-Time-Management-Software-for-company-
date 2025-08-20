@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { handleError, handleSuccess } from "./utils";
 import { useEffect } from "react";
+import { API_ENDPOINT } from "../utility/constant";
 const Leave = () => {
   const [leaveEntries, setLeaveEntries] = useState([]);
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ const Leave = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch("https://tms-backend-g0yl.onrender.com/add/leave", {
+        const response = await fetch(`${API_ENDPOINT}/add/leave`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -57,7 +58,7 @@ const Leave = () => {
     }
     try {
       const token = localStorage.getItem("token");
-      const url = "https://tms-backend-g0yl.onrender.com/add/leave";
+      const url = `${API_ENDPOINT}/add/leave`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

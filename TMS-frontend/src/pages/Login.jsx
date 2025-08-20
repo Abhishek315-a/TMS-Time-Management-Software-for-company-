@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiUser, FiLock, FiMail } from "react-icons/fi";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { handleError, handleSuccess } from "./utils";
+import { API_ENDPOINT } from "../utility/constant";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Login = () => {
       return handleError("All fields are required");
     }
     try {
-      const url = "http://localhost:8080/auth/login";
+      const url = `${API_ENDPOINT}/auth/login`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

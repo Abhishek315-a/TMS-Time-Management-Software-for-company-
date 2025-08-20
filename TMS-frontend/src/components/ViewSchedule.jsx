@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { handleError } from "../pages/utils";
 import { CalendarDays, Clock, MapPin, Users, Info } from "lucide-react";
+import { API_ENDPOINT } from "../utility/constant";
 
 const ViewSchedule = () => {
   const [appointments, setAppointments] = useState([]);
@@ -12,7 +13,7 @@ const ViewSchedule = () => {
 
       try {
         const res = await fetch(
-          `https://tms-backend-g0yl.onrender.com/schedule/appointment?email=${userEmail}`
+          `${API_ENDPOINT}/schedule/appointment?email=${userEmail}`
         );
         const data = await res.json();
         if (data.success) {

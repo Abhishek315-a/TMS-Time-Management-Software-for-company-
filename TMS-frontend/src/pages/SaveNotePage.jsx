@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { API_ENDPOINT } from "../utility/constant";
 
 const SaveNotePage = () => {
   const [notesEntries, setNotesEntries] = useState([]);
@@ -26,7 +27,7 @@ const SaveNotePage = () => {
     const fetchNotes = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("https://tms-backend-g0yl.onrender.com/create/notes", {
+        const response = await fetch(`${API_ENDPOINT}/create/notes`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -92,7 +93,7 @@ const SaveNotePage = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`https://tms-backend-g0yl.onrender.com/create/notes/${id}`, {
+      const res = await fetch(`${API_ENDPOINT}/create/notes/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -122,8 +123,8 @@ const SaveNotePage = () => {
     try {
       const token = localStorage.getItem("token");
       const url = editMode
-        ? `http://localhost:8080/create/notes/${pasteId}`
-        : "http://localhost:8080/create/notes";
+        ? `${API_ENDPOINT}/create/notes/${pasteId}`
+        : `${API_ENDPOINT}/create/notes`;
       const method = editMode ? "PUT" : "POST";
 
       const response = await fetch(url, {
