@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const SaveNotePage = () => {
   const [notesEntries, setNotesEntries] = useState([]);
@@ -27,7 +27,7 @@ const SaveNotePage = () => {
     const fetchNotes = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch(`${API_ENDPOINT}/create/notes`, {
+        const response = await fetch(`${REACT_APP_API_URL}/create/notes`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const SaveNotePage = () => {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`${API_ENDPOINT}/create/notes/${id}`, {
+      const res = await fetch(`${REACT_APP_API_URL}/create/notes/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -123,8 +123,8 @@ const SaveNotePage = () => {
     try {
       const token = localStorage.getItem("token");
       const url = editMode
-        ? `${API_ENDPOINT}/create/notes/${pasteId}`
-        : `${API_ENDPOINT}/create/notes`;
+        ? `${REACT_APP_API_URL}/create/notes/${pasteId}`
+        : `${REACT_APP_API_URL}/create/notes`;
       const method = editMode ? "PUT" : "POST";
 
       const response = await fetch(url, {

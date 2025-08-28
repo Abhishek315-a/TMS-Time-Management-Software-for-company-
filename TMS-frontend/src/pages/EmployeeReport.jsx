@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const EmployeeReport = () => {
   const [report, setReport] = useState(null);
@@ -10,7 +10,7 @@ const EmployeeReport = () => {
     const fetchReport = async () => {
       try {
         const res = await fetch(
-          `${API_ENDPOINT}/report/employee-report?email=${email}`
+          `${REACT_APP_API_URL}/report/employee-report?email=${email}`
         );
         const data = await res.json();
         if (data.success) {

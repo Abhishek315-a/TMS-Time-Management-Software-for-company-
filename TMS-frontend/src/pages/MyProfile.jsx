@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const ProfilePage = () => {
   const [user, setUser] = useState({
@@ -22,7 +22,7 @@ const ProfilePage = () => {
     const fetchUserInfo = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch(`${API_ENDPOINT}/profile`, {
+        const res = await fetch(`${REACT_APP_API_URL}/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -87,7 +87,7 @@ const handleImageChange = (e) => {
   const handleSave = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`${API_ENDPOINT}/profile`, {
+      const res = await fetch(`${REACT_APP_API_URL}/profile`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

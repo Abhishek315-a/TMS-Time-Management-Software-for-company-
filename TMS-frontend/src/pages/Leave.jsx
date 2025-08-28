@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { handleError, handleSuccess } from "./utils";
 import { useEffect } from "react";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 const Leave = () => {
   const [leaveEntries, setLeaveEntries] = useState([]);
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ const Leave = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`${API_ENDPOINT}/add/leave`, {
+        const response = await fetch(`${REACT_APP_API_URL}/add/leave`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const Leave = () => {
     }
     try {
       const token = localStorage.getItem("token");
-      const url = `${API_ENDPOINT}/add/leave`;
+      const url = `${REACT_APP_API_URL}/add/leave`;
       const response = await fetch(url, {
         method: "POST",
         headers: {
