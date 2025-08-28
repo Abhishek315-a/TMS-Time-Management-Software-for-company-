@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 
 const ManagerTaskList = ({ onDelete }) => {
@@ -12,7 +12,7 @@ const ManagerTaskList = ({ onDelete }) => {
 
       try {
         const res = await fetch(
-          `${API_ENDPOINT}/assign/manager-tasks?assignedBy=${userEmail}`
+          `${REACT_APP_API_URL}/assign/manager-tasks?assignedBy=${userEmail}`
         );
         const data = await res.json();
         if (data.success) {

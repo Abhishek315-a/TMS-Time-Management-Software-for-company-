@@ -4,7 +4,7 @@ import { format, parse, startOfWeek, getDay } from "date-fns";
 import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./CalendarView.css";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const locales = {
   "en-US": enUS,
@@ -29,7 +29,7 @@ const CalendarView = () => {
 
       try {
         const res = await fetch(
-          `${API_ENDPOINT}/schedule/appointment?email=${userEmail}`
+          `${REACT_APP_API_URL}/schedule/appointment?email=${userEmail}`
         );
         const data = await res.json();
         if (data.success) {

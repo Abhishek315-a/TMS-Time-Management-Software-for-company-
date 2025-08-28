@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { handleError } from "../pages/utils";
 import { CalendarDays, Clock, MapPin, Users, Info } from "lucide-react";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const ViewSchedule = () => {
   const [appointments, setAppointments] = useState([]);
@@ -13,7 +13,7 @@ const ViewSchedule = () => {
 
       try {
         const res = await fetch(
-          `${API_ENDPOINT}/schedule/appointment?email=${userEmail}`
+          `${REACT_APP_API_URL}/schedule/appointment?email=${userEmail}`
         );
         const data = await res.json();
         if (data.success) {

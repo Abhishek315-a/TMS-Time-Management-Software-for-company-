@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AppointmentForm.css";
 import { handleError, handleSuccess } from "../pages/utils";
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const AppointmentForm = () => {
   const [emailInput, setEmailInput] = useState("");
@@ -51,7 +51,7 @@ const AppointmentForm = () => {
       return handleError("All fields are required!");
     }
     try {
-      const url = `${API_ENDPOINT}/schedule/appointment`;
+      const url = `${REACT_APP_API_URL}/schedule/appointment`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

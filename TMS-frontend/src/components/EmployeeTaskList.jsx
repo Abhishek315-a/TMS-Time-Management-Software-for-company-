@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { handleError, handleSuccess } from "../pages/utils"; // Adjust if needed
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const EmployeeTaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -11,7 +11,7 @@ const EmployeeTaskList = () => {
 
     try {
       const res = await fetch(
-        `${API_ENDPOINT}/assign/task?email=${userEmail}`
+        `${REACT_APP_API_URL}/assign/task?email=${userEmail}`
       );
       const data = await res.json();
       if (data.success) {
@@ -29,7 +29,7 @@ const EmployeeTaskList = () => {
 
   const handleStatusChange = async (taskId, newStatus) => {
     try {
-      const res = await fetch(`${API_ENDPOINT}/assign/update`, {
+      const res = await fetch(`${REACT_APP_API_URL}/assign/update`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ taskId, status: newStatus }),
@@ -64,7 +64,7 @@ const EmployeeTaskList = () => {
     );
     if (!confirmDelete) return;
     try {
-      const res = await fetch(`${API_ENDPOINT}/assign/delete/${taskId}`, {
+      const res = await fetch(`${REACT_APP_API_URL}/assign/delete/${taskId}`, {
         method: "DELETE",
       });
 

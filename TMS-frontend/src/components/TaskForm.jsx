@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { handleError, handleSuccess } from "../pages/utils"; // ✅ Make sure handleSuccess is imported too
-import { API_ENDPOINT } from "../utility/constant";
+import { REACT_APP_API_URL } from "../utility/constant";
 
 const TaskForm = () => {
   const [formData, setFormData] = useState({
@@ -57,7 +57,7 @@ const TaskForm = () => {
     };
 
     try {
-      const response = await fetch(`${API_ENDPOINT}/assign/task`, {
+      const response = await fetch(`${REACT_APP_API_URL}/assign/task`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
